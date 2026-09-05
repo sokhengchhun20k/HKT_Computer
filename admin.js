@@ -22,7 +22,7 @@ function getCurrentUser() {
 const currentUser = getCurrentUser();
 
 if (!currentUser || currentUser.role !== "admin") {
-    window.location.href = "computer_shop2.html";
+    window.location.href = "computer_shop1.html";
 }
 
 /* =========================================================
@@ -1488,7 +1488,7 @@ if (adminLogoutBtn) {
             );
 
             window.location.href =
-                "computer_shop2.html";
+                "index.html";
         }
     );
 }
