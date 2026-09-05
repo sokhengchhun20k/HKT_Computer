@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TechNova | Admin Dashboard</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-logo">
+
+            <div class="admin-logo-icon">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <div>
+                <strong>Tech<span>Nova</span></strong>
+                <small>ADMIN PANEL</small>
+            </div>
+
+        </div>
+
+        <nav class="admin-nav">
+
+            <button
+                type="button"
+                class="admin-nav-btn active"
+                data-page="dashboard"
+            >
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </button>
+
+            <button
+                type="button"
+                class="admin-nav-btn"
+                data-page="products"
+            >
+                <i class="fa-solid fa-box"></i>
+                Products
+            </button>
+
+            <button
+                type="button"
+                class="admin-nav-btn"
+                data-page="orders"
+            >
+                <i class="fa-solid fa-cart-shopping"></i>
+                Orders
+            </button>
+
+            <button
+                type="button"
+                class="admin-nav-btn"
+                data-page="customers"
+            >
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                id="viewStoreBtn"
+            >
+                <i class="fa-solid fa-store"></i>
+                View Store
+            </button>
+
+            <button
+                type="button"
+                id="adminLogoutBtn"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+        <header class="admin-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="mobile-sidebar-btn"
+                    id="mobileSidebarBtn"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="page-heading">
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                    <p id="pageSubtitle">
+                        Welcome back, Admin.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div>
+                    <strong id="adminName">
+                        Admin
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section
+            class="admin-page active"
+            id="dashboardPage"
+        >
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Products
+                        </span>
+
+                        <strong id="totalProducts">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Customers
+                        </span>
+
+                        <strong id="totalCustomers">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Orders
+                        </span>
+
+                        <strong id="totalOrders">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Sales
+                        </span>
+
+                        <strong id="totalSales">
+                            $0.00
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="admin-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Recent Orders
+                            </h2>
+
+                            <p>
+                                Latest customer orders
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-all-btn"
+                            data-page-target="orders"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+                    <div id="recentOrders">
+                        <!-- generated -->
+                    </div>
+
+                </div>
+
+
+                <div class="admin-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>
+                                Store Overview
+                            </h2>
+
+                            <p>
+                                Current inventory
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="overview-list"
+                        id="storeOverview"
+                    >
+                        <!-- generated -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <section
+            class="admin-page"
+            id="productsPage"
+        >
+
+            <div class="page-toolbar">
+
+                <div>
+
+                    <h2>
+                        Products
+                    </h2>
+
+                    <p>
+                        Manage products displayed in your store.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="addProductBtn"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Product
+                </button>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="productsTable">
+                            <!-- generated -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ORDERS ================= -->
+
+        <section
+            class="admin-page"
+            id="ordersPage"
+        >
+
+            <div class="page-toolbar">
+
+                <div>
+
+                    <h2>
+                        Orders
+                    </h2>
+
+                    <p>
+                        View and manage customer orders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Order ID
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Items
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ordersTable">
+                            <!-- generated -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CUSTOMERS ================= -->
+
+        <section
+            class="admin-page"
+            id="customersPage"
+        >
+
+            <div class="page-toolbar">
+
+                <div>
+
+                    <h2>
+                        Customers
+                    </h2>
+
+                    <p>
+                        Registered TechNova customers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Role
+                                </th>
+
+                                <th>
+                                    Registered
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="customersTable">
+                            <!-- generated -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= PRODUCT FORM MODAL ================= -->
+
+    <div
+        class="admin-modal-overlay"
+        id="productFormModal"
+    >
+
+        <div class="admin-form-modal">
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                id="closeProductForm"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2 id="productFormTitle">
+                Add Product
+            </h2>
+
+            <p>
+                Enter the product information below.
+            </p>
+
+
+            <form id="productForm">
+
+                <input
+                    type="hidden"
+                    id="productId"
+                >
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="productName">
+                            Product Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="productCategory"
+                            required
+                        >
+
+                            <option value="laptop">
+                                Laptop
+                            </option>
+
+                            <option value="desktop">
+                                Desktop
+                            </option>
+
+                            <option value="component">
+                                Component
+                            </option>
+
+                            <option value="monitor">
+                                Monitor
+                            </option>
+
+                            <option value="accessory">
+                                Accessory
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productCategoryName">
+                            Category Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productCategoryName"
+                            placeholder="Gaming Laptop"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productPrice">
+                            Price ($)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productOldPrice">
+                            Old Price ($)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productOldPrice"
+                            min="0"
+                            step="0.01"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productDiscount">
+                            Discount (%)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productDiscount"
+                            min="0"
+                            max="100"
+                            value="0"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productStatus">
+                            Status
+                        </label>
+
+                        <select id="productStatus">
+
+                            <option value="available">
+                                Available
+                            </option>
+
+                            <option value="new">
+                                New
+                            </option>
+
+                            <option value="sold">
+                                Sold Out
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productStock">
+                            Stock
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            min="0"
+                            step="1"
+                            value="0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="productImage">
+                            Image URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="productImage"
+                            placeholder="https://..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="productDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="productDescription"
+                            rows="3"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="productSpecs">
+                            Specifications
+                        </label>
+
+                        <textarea
+                            id="productSpecs"
+                            rows="7"
+                            placeholder="CPU: Intel Core i9&#10;GPU: RTX 4070&#10;RAM: 32GB DDR5"
+                        ></textarea>
+
+                        <small>
+                            Write one specification per line using:
+                            <strong>Key: Value</strong>
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelProductForm"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        <i class="fa-solid fa-save"></i>
+                        Save Product
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
