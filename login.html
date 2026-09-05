@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="TechNova Login and Registration">
+
+    <title>TechNova | Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <!-- LEFT SIDE -->
+        <section class="auth-showcase">
+
+            <div class="showcase-content">
+
+                <a href="computer_shop1.html" class="brand">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </span>
+
+                    <span>
+                        Tech<span>Nova</span>
+                    </span>
+                </a>
+
+                <div class="showcase-main">
+
+                    <span class="showcase-label">
+                        <i class="fa-solid fa-bolt"></i>
+                        NEXT GENERATION TECHNOLOGY
+                    </span>
+
+                    <h1>
+                        POWER YOUR
+                        <span>FUTURE.</span>
+                    </h1>
+
+                    <p>
+                        Sign in to your TechNova account and discover
+                        powerful computers, gaming gear and technology.
+                    </p>
+
+                    <div class="showcase-features">
+
+                        <div>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Secure Account</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-box"></i>
+                            <span>Track Orders</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Save Favorites</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="showcase-bottom">
+                    <span>© 2026 TechNova</span>
+                    <span>Phnom Penh, Cambodia</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="auth-panel">
+
+            <div class="auth-container">
+
+                <!-- MOBILE LOGO -->
+                <a href="computer_shop1.html" class="mobile-brand">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </span>
+
+                    <span>
+                        Tech<span>Nova</span>
+                    </span>
+                </a>
+
+
+                <!-- AUTH CARD -->
+                <div class="auth-card">
+
+                    <!-- Tabs -->
+                    <div class="auth-tabs">
+
+                        <button
+                            class="auth-tab active"
+                            id="loginTab"
+                            type="button"
+                        >
+                            Login
+                        </button>
+
+                        <button
+                            class="auth-tab"
+                            id="registerTab"
+                            type="button"
+                        >
+                            Register
+                        </button>
+
+                    </div>
+
+
+                    <!-- LOGIN FORM -->
+                    <form id="loginForm" class="auth-form">
+
+                        <div class="form-heading">
+                            <h2>Welcome back</h2>
+                            <p>Login to continue to TechNova.</p>
+                        </div>
+
+
+                        <div class="account-type">
+
+                            <button
+                                type="button"
+                                class="account-btn active"
+                                data-type="customer"
+                                id="customerLoginBtn"
+                            >
+                                <i class="fa-solid fa-user"></i>
+                                Customer
+                            </button>
+
+                            <button
+                                type="button"
+                                class="account-btn"
+                                data-type="admin"
+                                id="adminLoginBtn"
+                            >
+                                <i class="fa-solid fa-user-shield"></i>
+                                Admin
+                            </button>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="loginEmail">
+                                Email
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="loginEmail"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    placeholder="Enter your password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="loginPassword"
+                                >
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-options">
+
+                            <label class="remember">
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberMe"
+                                >
+
+                                <span>Remember me</span>
+
+                            </label>
+
+                            <button
+                                type="button"
+                                id="forgotPassword"
+                                class="forgot-btn"
+                            >
+                                Forgot password?
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            <span>Login</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+
+                        <div class="form-message" id="loginMessage"></div>
+
+
+                        <div class="auth-switch">
+                            Don't have an account?
+
+                            <button
+                                type="button"
+                                id="switchToRegister"
+                            >
+                                Create one
+                            </button>
+                        </div>
+
+                    </form>
+
+
+                    <!-- REGISTER FORM -->
+                    <form
+                        id="registerForm"
+                        class="auth-form hidden"
+                    >
+
+                        <div class="form-heading">
+                            <h2>Create account</h2>
+                            <p>Join TechNova today.</p>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerName">
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="registerName"
+                                    placeholder="Enter your full name"
+                                    required
+                                    minlength="2"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerEmail">
+                                Email
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerPassword">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    placeholder="Create a password"
+                                    required
+                                    minlength="6"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="registerPassword"
+                                >
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="terms">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            <span>
+                                I agree to the TechNova terms and conditions.
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            <span>Create Account</span>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </button>
+
+
+                        <div
+                            class="form-message"
+                            id="registerMessage"
+                        ></div>
+
+
+                        <div class="auth-switch">
+
+                            Already have an account?
+
+                            <button
+                                type="button"
+                                id="switchToLogin"
+                            >
+                                Login
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <a
+                    href="computer_shop1.html"
+                    class="back-store"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to TechNova Store
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>
