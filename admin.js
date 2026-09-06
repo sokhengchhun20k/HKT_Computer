@@ -1460,7 +1460,7 @@ if (viewStoreBtn) {
             event.stopPropagation();
 
             window.location.href =
-                "computer_shop2.html";
+                "index.html";
         }
     );
 }
